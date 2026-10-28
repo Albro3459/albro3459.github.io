@@ -1,0 +1,73 @@
+---
+import '@fontsource-variable/manrope';
+import '@fontsource/dm-mono/400.css';
+import '../styles/global.css';
+import Icon from '../components/Icon.astro';
+type Props = { title?: string; description?: string };
+const { title = 'Alexander Brodsky — Software Engineer', description = 'Alexander Brodsky, full-stack software engineer at Marucci Sports and Georgia Tech computer science graduate student. Experience, projects, education, and resume.' } = Astro.props;
+const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site) : undefined;
+const socialImage = Astro.site ? new URL('/social-preview.png', Astro.site) : '/social-preview.png';
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#f6f7f9" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content={socialImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Alexander Brodsky, Software Engineer. Experience, projects, and resume." />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+    <script is:inline>
+      const systemTheme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.dataset.theme = systemTheme;
+      try { document.documentElement.dataset.theme = localStorage.getItem('portfolio-theme') || systemTheme; } catch {}
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header shell">
+      <a class="brand" href="/" aria-label="Alexander Brodsky home"><span>Alexander Brodsky</span></a>
+      <nav aria-label="Main navigation"><a href="/#experience">Experience</a><a href="/#work">Projects</a><a href="/#about">Education</a></nav>
+      <div class="header-actions"><button class="theme-toggle icon-button" type="button" aria-label="Switch to dark theme"><Icon name="moon" /><Icon name="sun" /></button><a class="header-contact" href="/#contact">Contact <Icon size={16} /></a></div>
+    </header>
+    <main id="main"><slot /></main>
+    <footer class="site-footer shell"><a class="footer-name" href="/">Alexander Brodsky</a><div><a href="https://github.com/Albro3459" target="_blank" rel="noreferrer">GitHub <Icon size={14} /></a><a href="https://www.linkedin.com/in/brodsky-alex22/" target="_blank" rel="noreferrer">LinkedIn <Icon size={14} /></a><a href="/Alex-Brodsky-Resume.pdf" target="_blank">Resume <Icon size={14} /></a></div><span class="footer-colophon">© {new Date().getFullYear()} Alexander Brodsky</span></footer>
+    <script>
+      const themeButton = document.querySelector<HTMLButtonElement>('.theme-toggle');
+      const systemTheme = matchMedia('(prefers-color-scheme: dark)');
+      let followsSystemTheme = true;
+      try { followsSystemTheme = !localStorage.getItem('portfolio-theme'); } catch {}
+      const updateThemeLabel = () => { themeButton?.setAttribute('aria-label', document.documentElement.dataset.theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'); };
+      updateThemeLabel();
+      systemTheme.addEventListener('change', () => {
+        if (!followsSystemTheme) return;
+        document.documentElement.dataset.theme = systemTheme.matches ? 'dark' : 'light';
+        updateThemeLabel();
+      });
+      themeButton?.addEventListener('click', () => {
+        followsSystemTheme = false;
+        const theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+        document.documentElement.dataset.theme = theme;
+        try { localStorage.setItem('portfolio-theme', theme); } catch {}
+        updateThemeLabel();
+      });
+      const media = matchMedia('(prefers-reduced-motion: reduce)');
+      if (!media.matches && 'IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); } });
+        }, { threshold: 0.08 });
+        document.querySelectorAll('[data-reveal]').forEach(element => { element.classList.add('will-reveal'); observer.observe(element); });
+      }
+    </script>
+  </body>
+</html>
