@@ -7,6 +7,7 @@ type Props = { title?: string; description?: string };
 const { title = 'Alexander Brodsky — Software Engineer', description = 'Alexander Brodsky, full-stack software engineer at Marucci Sports and Georgia Tech computer science graduate student. Experience, projects, education, and resume.' } = Astro.props;
 const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site) : undefined;
 const socialImage = Astro.site ? new URL('/social-preview.png', Astro.site) : '/social-preview.png';
+const faviconVersion = Date.now();
 ---
 <!doctype html>
 <html lang="en">
@@ -25,7 +26,7 @@ const socialImage = Astro.site ? new URL('/social-preview.png', Astro.site) : '/
     <meta property="og:url" content={canonical} />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="canonical" href={canonical} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href={`/favicon.svg?v=${faviconVersion}`} />
     <title>{title}</title>
     <script is:inline>
       const systemTheme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
