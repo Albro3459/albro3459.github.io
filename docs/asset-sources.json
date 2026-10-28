@@ -54,5 +54,59 @@
     "file": "/images/codelaunch-mobile.webp",
     "originalBytes": 370121,
     "optimizedBytes": 39388
+  },
+  {
+    "name": "shelf-web",
+    "source": "https://raw.githubusercontent.com/Albro3459/Shelf/main/docs/images/search.png",
+    "file": "/images/shelf-web.webp",
+    "originalBytes": 120358,
+    "optimizedBytes": 45194
+  },
+  {
+    "name": "shelf-mobile",
+    "source": "https://raw.githubusercontent.com/Albro3459/Shelf/main/docs/images/availability.png",
+    "file": "/images/shelf-mobile.webp",
+    "originalBytes": 101728,
+    "optimizedBytes": 42502
+  },
+  {
+    "name": "catch-chat",
+    "source": "https://github.com/user-attachments/assets/04a06aaa-0b35-41b0-ae5a-01bdbf9232db",
+    "file": "/images/catch-chat.webp",
+    "originalBytes": 257671,
+    "optimizedBytes": 104374
+  },
+  {
+    "name": "catch-home",
+    "source": "https://github.com/user-attachments/assets/1c028aed-546b-4674-ad18-41e2acfbd33b",
+    "file": "/images/catch-home.webp",
+    "originalBytes": 1037330,
+    "optimizedBytes": 66700
+  },
+  {
+    "name": "catch-registration",
+    "source": "https://github.com/user-attachments/assets/00d23997-24d8-4096-b2b8-3b4718817874",
+    "file": "/images/catch-registration.webp",
+    "originalBytes": 386859,
+    "optimizedBytes": 79098
+  },
+  {
+    "name": "clipboard-window",
+    "source": "https://github.com/user-attachments/assets/5159adc7-daa6-439a-8380-c28f2f8c5863",
+    "file": "/images/clipboard-window.webp",
+    "originalBytes": 151463,
+    "optimizedBytes": 27774
+  },
+  {
+    "name": "clipboard-search",
+    "source": "https://github.com/user-attachments/assets/816caec4-2adb-4f34-90f7-335faee855d1",
+    "file": "/images/clipboard-search.webp",
+    "originalBytes": 117900,
+    "optimizedBytes": 14682
+  },
+  {
+    "name": "wordle-icon",
+    "source": "https://github.com/Albro3459/WordleExtension/blob/main/store-assets/logo-source.svg",
+    "file": "/images/wordle-icon.svg"
   }
 ]

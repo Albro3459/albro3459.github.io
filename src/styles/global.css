@@ -477,6 +477,76 @@ h2 span {
   background:#dde5f6;
 }
 
+.visual-shelf {
+  background:#dce9ec;
+}
+
+.shelf-desktop {
+  position:absolute;
+  width:84%;
+  left:8%;
+  top:20%;
+  border:1px solid #b9c9d8;
+  border-radius:7px;
+  overflow:hidden;
+  box-shadow:0 15px 35px #17203326;
+}
+
+.shelf-desktop>img {
+  display:block;
+  width:100%;
+}
+
+.shelf-phone {
+  position:absolute;
+  width:21%;
+  right:5%;
+  top:30%;
+  border:4px solid #252735;
+  border-radius:17px;
+  box-shadow:0 10px 25px #17203333;
+}
+
+.visual-the-catch {
+  background:#e0e6f5;
+}
+
+.visual-ai-developer-tools {
+  background:#172944;
+  color:#dbe8fa;
+}
+
+.toolkit-art {
+  position:absolute;
+  inset:24% 8%;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  align-content:center;
+  gap:12px;
+}
+
+.toolkit-art span {
+  display:flex;
+  align-items:center;
+  min-height:49px;
+  padding:12px;
+  border:1px solid #44618a;
+  border-radius:5px;
+  background:#233c5d;
+  font:12px/1.6 var(--mono);
+}
+
+.case-cover .toolkit-art {
+  inset:23% 12%;
+  gap:20px;
+}
+
+.case-cover .toolkit-art span {
+  font-size:20px;
+  min-height:76px;
+  padding:20px;
+}
+
 .phone-trio {
   position:absolute;
   display:flex;
@@ -794,6 +864,57 @@ h2 span {
   font-size:11px;
 }
 
+.project-mention {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  padding:28px 0;
+  margin-top:42px;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+
+.project-mention-main {
+  display:flex;
+  align-items:center;
+  gap:20px;
+  min-width:0;
+}
+
+.project-app-icon {
+  width:80px;
+  height:80px;
+  flex-shrink:0;
+  border-radius:16px;
+}
+
+.project-mention .eyebrow {
+  font-size:9px;
+  color:var(--muted);
+}
+
+.project-mention h3 {
+  font-size:20px;
+  margin:8px 0;
+}
+
+.project-mention p {
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.8;
+}
+
+.project-mention-links {
+  display:flex;
+  flex-wrap:wrap;
+  gap:20px;
+}
+
+.project-mention-links .text-link {
+  font-size:11px;
+}
+
 .all-github svg:first-child {
   margin-left:6px;
 }
@@ -1014,6 +1135,10 @@ h2 span {
   gap:35px;
 }
 
+.case-title-row>div,.case-content {
+  min-width:0;
+}
+
 .case-hero h1 {
   font-size:clamp(48px,6.5vw,88px);
   font-weight:500;
@@ -1218,6 +1343,53 @@ h2 span {
   line-height:1.9;
   margin-top:11px;
   max-width:740px;
+}
+
+.case-highlights .text-link {
+  margin-top:14px;
+  font-size:12px;
+}
+
+.developer-tools {
+  margin-top:38px;
+}
+
+.developer-tools>h2 {
+  font-size:24px;
+  margin-bottom:18px;
+}
+
+.developer-tool {
+  padding:26px 0;
+  border-top:1px solid var(--line);
+}
+
+.developer-tool h3 {
+  font-size:21px;
+  letter-spacing:-.5px;
+}
+
+.developer-tool p {
+  font-size:13px;
+  color:var(--muted);
+  line-height:1.9;
+  margin-top:10px;
+}
+
+.developer-tool-links {
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px 22px;
+  margin-top:16px;
+}
+
+.developer-tool-links .text-link {
+  font-size:11px;
+}
+
+.developer-tool .tool-credit {
+  font-size:11px;
+  margin-top:16px;
 }
 
 .case-credit {
@@ -2323,6 +2495,13 @@ h2 span {
   flex-shrink:0;
 }
 
+.contact-actions {
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  flex-shrink:0;
+}
+
 .contact-bottom {
   display:flex;
   align-items:center;
@@ -2336,6 +2515,23 @@ h2 span {
   gap:12px;
   align-items:center;
   font-size:12px;
+}
+
+[data-theme=dark] .contact-inner {
+  background:transparent;
+  color:var(--ink);
+  border-top:1px solid var(--line);
+  border-radius:0;
+  padding-inline:0;
+}
+
+[data-theme=dark] .contact-main p,
+[data-theme=dark] .copy-email {
+  color:var(--muted);
+}
+
+[data-theme=dark] .contact-bottom {
+  border-color:var(--line);
 }
 
 @media(max-width:1000px) {
@@ -2358,6 +2554,47 @@ h2 span {
 }
 
 @media(max-width:700px) {
+  .project-mention-main {
+    gap:14px;
+  }
+
+  .project-app-icon {
+    width:56px;
+    height:56px;
+    border-radius:12px;
+  }
+
+  .project-mention {
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .toolkit-art {
+    gap:8px;
+  }
+
+  .toolkit-art span {
+    font-size:10px;
+    min-height:40px;
+    padding:8px;
+  }
+
+  .case-cover .toolkit-art {
+    inset:24% 8%;
+    gap:10px;
+  }
+
+  .case-cover .toolkit-art span {
+    font-size:11px;
+    min-height:45px;
+    padding:10px;
+  }
+
+  .shelf-phone {
+    border-width:2px;
+    border-radius:10px;
+  }
+
   .hero-main {
     grid-template-columns:1fr;
     gap:33px;
