@@ -1,6 +1,5 @@
 # Development
 
-
 A personal portfolio built with Astro and TypeScript. Project case studies, actual app screenshots, a downloadable resume, and a resume-focused design with blue accents and light and dark themes.
 
 ## Run locally
@@ -22,7 +21,7 @@ npm run build
 npm run preview
 ```
 
-The build runs Astro’s TypeScript checks and generates eleven static pages: the homepage, nine project pages, and a custom 404 page. No server is required for deployment. The site has not been deployed.
+The build runs Astro’s TypeScript checks and generates eleven static pages: the homepage, nine project pages, and a custom 404 page. No server is required for deployment.
 
 ## Content and design
 
@@ -53,6 +52,14 @@ npm run record
 
 The recording is saved as a WebM in the ignored artifacts directory.
 
-## Before a future deployment
+## Deployment
 
-Set Astro’s `site` option to the final public origin to enable canonical URLs and absolute social preview URLs. Update the resume and current employment details when needed. The origin remote is `git@github.com:Albro3459/albro3459.github.io.git`. Deployment configuration has not been added.
+The public address is https://albro3459.github.io/. Astro’s `site` option sets this origin for canonical URLs and social previews. This is a user Pages repository, so there is no repository prefix in its URLs.
+
+The deployment workflow runs on pushes to `main` and can also be started manually from GitHub Actions. It uses Node.js 24 and Astro’s official action to install dependencies, run the production build, and upload the static output. A separate deployment job publishes that artifact to GitHub Pages.
+
+In the repository’s Pages settings, select **GitHub Actions** as the source. Branch publishing invokes Jekyll on the Astro source and fails because Astro frontmatter contains TypeScript.
+
+Each deployed page includes a version meta tag combining the package version and Actions run number, such as `1.0.0+12`. Local builds use the package version. Deployment versions advance without creating version-bump commits or changing the lockfile. Favicon URLs include a build timestamp to refresh browser caches.
+
+The origin remote is `git@github.com:Albro3459/albro3459.github.io.git`. Keep the resume and employment details current.
