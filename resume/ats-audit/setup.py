@@ -43,8 +43,9 @@ subprocess.run(
     check=True,
 )
 environment = root / ".venv"
-venv.EnvBuilder(with_pip=True).create(environment)
 python = environment / ("Scripts/python.exe" if sys.platform == "win32" else "bin/python")
+if not python.is_file():
+    venv.EnvBuilder(with_pip=True).create(environment)
 
 subprocess.run(["npm", "install", "--ignore-scripts"], cwd=root, check=True)
 subprocess.run(
@@ -53,10 +54,11 @@ subprocess.run(
 )
 if args.with_docling:
     docling_environment = root / ".venv-docling"
-    venv.EnvBuilder(with_pip=True).create(docling_environment)
     docling_python = docling_environment / (
         "Scripts/python.exe" if sys.platform == "win32" else "bin/python"
     )
+    if not docling_python.is_file():
+        venv.EnvBuilder(with_pip=True).create(docling_environment)
     subprocess.run(
         [str(docling_python), "-m", "pip", "install", "-r", str(root / "requirements-docling.txt")],
         check=True,

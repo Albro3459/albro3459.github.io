@@ -47,7 +47,7 @@ Install Docling alongside the default checker from the project root:
 npm run resume:setup -- --with-docling
 ```
 
-This installs `docling==2.148.0` in a separate ignored `.venv-docling` environment using the setup interpreter. The default setup and check do not install or import Docling. Its Python dependencies stay separate from the base checker's pins. The root commands forward arguments to setup and audit, so no extra Node dependency or root script is needed.
+This installs `docling==2.148.0` in a separate ignored `.venv-docling` environment using the setup interpreter. Setup reuses existing environments and installs dependencies again when rerun. The default setup and check do not install or import Docling. Its Python dependencies stay separate from the base checker's pins. The root commands forward arguments to setup and audit, so no extra Node dependency or root script is needed.
 
 Select both vendors, or run Docling without OpenResume's semantic field extraction:
 
