@@ -6,7 +6,7 @@ Install the checker once from the project root:
 npm run resume:setup
 ```
 
-Requires Git, Node.js 24 or newer, and Python 3.11 or newer. Setup initializes the OpenResume submodule at the revision recorded by this repository, creates an isolated Python environment, and installs pinned Node and Python dependencies in the tool directory. The tool lives with the resume documents, separately from the Astro site. The website build does not need the submodule or these dependencies.
+Requires Git, Node.js 24 or newer, and Python 3.12 or newer, excluding Python 3.14.1 because the pinned NetworkX package does not support it. Setup looks for another installed interpreter if the default Python is unsupported. It initializes the OpenResume submodule at the revision recorded by this repository, creates an isolated Python environment, and installs pinned Node and Python dependencies in the tool directory. The tool lives with the resume documents, separately from the Astro site. The website build does not need the submodule or these dependencies.
 
 After exporting an updated resume PDF, run:
 
