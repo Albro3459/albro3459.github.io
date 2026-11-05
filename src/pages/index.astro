@@ -4,11 +4,52 @@ import Icon from '../components/Icon.astro';
 import ProjectVisual from '../components/ProjectVisual.astro';
 import { featuredProjects } from '../data/projects';
 const experience = [
-  { company: 'Marucci Sports', role: 'Full-Stack Web Developer', date: 'AUG 2025 — PRESENT', detail: 'Lead full-stack development of warranty and manufacturing systems supporting 3K+ monthly warranty users, and contribute to e-commerce serving 30K+ annual shoppers. Build Angular/NestJS applications with TypeScript, PostgreSQL, SQL Server, and AWS, using AI-assisted workflows and completing development tickets at 4x the team average. Revamped shipping and packaging logic with quantity caps and item grouping, generating approximately $75K in additional monthly shipping revenue. Hardened API access controls, authentication, account links, and SQL handling. Improved performance, reliability, and availability of a highly concurrent production-line system, plus warranty UI/UX and cross-system export/sync consistency.' },
-  { company: 'Louisiana Office of Technology Services', role: 'Software Developer Intern', date: 'JAN 2024 — MAY 2025', detail: 'Developed full-stack MVC web applications and REST APIs in C#, JavaScript, and .NET alongside a full course load. Built GitHub Actions CI/CD with TypeScript and Cypress E2E tests, raising coverage from 0% to approximately 85%.' },
-  { company: 'Deloitte Consulting', role: 'Solutions Engineer Intern', date: 'JUN — JUL 2024', detail: 'Optimized SQL queries in a Java/Spring Boot IVR REST API, improving data retrieval efficiency by approximately 200%. Built a Python/Streamlit generative AI prototype that turned meeting summaries into RFP PDFs and PowerPoints, reducing preparation from over an hour to under two minutes.' },
-  { company: 'We Greaux People', role: 'Software Developer Intern', date: 'SEP — NOV 2023', detail: 'Contributed to a Flutter frontend and wrote Dart unit, integration, and widget tests, increasing coverage from approximately 25% to 75%.' },
-  { company: 'McIlhenny Company / Tabasco', role: 'Software Analyst Intern', date: 'MAY — JUL 2023', detail: 'Automated concurrent request reports with KSH scripts and SQL on AIX UNIX, saving 30–50 hours each month.' },
+  {
+    company: 'Marucci Sports',
+    role: 'Full-Stack Web Developer',
+    date: 'AUG 2025 — PRESENT',
+    highlights: [
+      'Lead warranty and manufacturing development supporting 3K+ monthly warranty users, and contribute to e-commerce serving 30K+ annual shoppers.',
+      'Build Angular/NestJS applications with TypeScript, PostgreSQL, SQL Server, and AWS. Use AI-assisted workflows to complete development tickets at 4x the team average.',
+      'Revamped shipping and packaging logic with quantity caps and item grouping, generating approximately $75K in additional monthly shipping revenue.',
+      'Hardened API access controls, authentication, account links, and SQL handling.',
+      'Improved production-line performance, reliability, and availability, plus warranty UI/UX and cross-system export/sync consistency.',
+    ],
+  },
+  {
+    company: 'Louisiana Office of Technology Services',
+    role: 'Software Developer Intern',
+    date: 'JAN 2024 — MAY 2025',
+    highlights: [
+      'Developed full-stack MVC web applications and REST APIs in C#, JavaScript, and .NET alongside a full course load.',
+      'Built GitHub Actions CI/CD with TypeScript and Cypress E2E tests, raising coverage from 0% to approximately 85%.',
+    ],
+  },
+  {
+    company: 'Deloitte Consulting',
+    role: 'Solutions Engineer Intern',
+    date: 'JUN — JUL 2024',
+    highlights: [
+      'Optimized SQL queries in a Java/Spring Boot IVR REST API, improving data retrieval efficiency by approximately 200%.',
+      'Built a Python/Streamlit generative AI prototype that turned meeting summaries into RFP PDFs and PowerPoints, reducing preparation from over an hour to under two minutes.',
+    ],
+  },
+  {
+    company: 'We Greaux People',
+    role: 'Software Developer Intern',
+    date: 'SEP — NOV 2023',
+    highlights: [
+      'Contributed to a Flutter frontend and wrote Dart unit, integration, and widget tests, increasing coverage from approximately 25% to 75%.',
+    ],
+  },
+  {
+    company: 'McIlhenny Company / Tabasco',
+    role: 'Software Analyst Intern',
+    date: 'MAY — JUL 2023',
+    highlights: [
+      'Automated concurrent request reports with KSH scripts and SQL on AIX UNIX, saving 30–50 hours each month.',
+    ],
+  },
 ];
 ---
 <Layout>
@@ -27,7 +68,7 @@ const experience = [
     </div>
   </section>
 
-  <section id="experience" class="experience-section shell" aria-labelledby="experience-heading"><div class="section-heading" data-reveal><div><h2 id="experience-heading">Experience</h2></div><a class="text-link" href="/Alexander-Brodsky-Resume.pdf" target="_blank">View resume <Icon size={17} /></a></div><div class="experience-list">{experience.map(job => <details class="experience-item" open data-reveal><summary><span class="experience-date">{job.date}</span><span class="experience-company">{job.company}<span>{job.role}</span></span><span class="experience-expand" aria-hidden="true">+</span></summary><p>{job.detail}</p></details>)}</div></section>
+  <section id="experience" class="experience-section shell" aria-labelledby="experience-heading"><div class="section-heading" data-reveal><div><h2 id="experience-heading">Experience</h2></div><a class="text-link" href="/Alexander-Brodsky-Resume.pdf" target="_blank">View resume <Icon size={17} /></a></div><div class="experience-list">{experience.map(job => <details class="experience-item" open data-reveal><summary><span class="experience-date">{job.date}</span><span class="experience-company">{job.company}<span>{job.role}</span></span><span class="experience-expand" aria-hidden="true">+</span></summary><ul>{job.highlights.map(highlight => <li>{highlight}</li>)}</ul></details>)}</div></section>
 
   <section id="about" class="about-section" aria-labelledby="about-heading">
     <div class="shell about-grid">
