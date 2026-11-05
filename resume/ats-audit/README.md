@@ -14,9 +14,9 @@ After exporting an updated resume PDF, run:
 npm run resume:check
 ```
 
-The default input is [the portfolio resume PDF](/Users/alexbrodsky/GitHub/Portfolio/resume/Alexander-Brodsky-Resume.pdf). The checker compares extracted text with the sibling Word source and checks selected structured fields against [the manually recorded baseline](/Users/alexbrodsky/GitHub/Portfolio/resume/ats-audit/expected.json). Input and output defaults resolve from the project location, so the tool works in other checkouts.
+The default input is [the portfolio resume PDF](../Alexander-Brodsky-Resume.pdf). The checker compares extracted text with the sibling Word source and checks selected structured fields against [the manually recorded baseline](./expected.json). Input and output defaults resolve from the project location, so the tool works in other checkouts.
 
-The [latest report](/Users/alexbrodsky/GitHub/Portfolio/resume/artifacts/ats-audit/current/report.md) includes extraction differences and structured field mismatches. That ignored output directory also contains raw JSON, extracted text, detected sections, PDF links, and rendered pages. Review these for job and bullet assignment, reading order, dates, and linked words. A successful command means the report was generated. Review its findings before treating the resume as ready.
+The latest report (`resume/artifacts/ats-audit/current/report.md`) includes extraction differences and structured field mismatches. That ignored output directory also contains raw JSON, extracted text, detected sections, PDF links, and rendered pages. Review these for job and bullet assignment, reading order, dates, and linked words. A successful command means the report was generated. Review its findings before treating the resume as ready.
 
 To check another PDF:
 
@@ -33,7 +33,7 @@ The sibling DOCX is used if present. Use `--docx /absolute/path/source.docx` to 
 - MuPDF: page rendering for visual review
 - Docling (optional): document layout, reading order, tables, Markdown, and text extraction
 
-OpenResume comes from [xitanggg/open-resume](https://github.com/xitanggg/open-resume) through the [git submodule](/Users/alexbrodsky/GitHub/Portfolio/resume/ats-audit/vendor/open-resume). This repository records the upstream commit, initially `4f8255a2c763479837f69f1dccf2a3338730cd79`, instead of storing copies of its source files. Reports include the checked-out upstream commit. Its grouping and field-extraction source is unchanged. The local adapter loads PDF.js in Node and maps text items as upstream does. It enables font metadata on current PDF.js and preserves PDF item order. A small shim supplies the same default skill values without loading the Redux application.
+OpenResume comes from [xitanggg/open-resume](https://github.com/xitanggg/open-resume) through the [git submodule](./vendor/open-resume). This repository records the upstream commit, initially `4f8255a2c763479837f69f1dccf2a3338730cd79`, instead of storing copies of its source files. Reports include the checked-out upstream commit. Its grouping and field-extraction source is unchanged. The local adapter loads PDF.js in Node and maps text items as upstream does. It enables font metadata on current PDF.js and preserves PDF item order. A small shim supplies the same default skill values without loading the Redux application.
 
 PDF.js is newer than the upstream application's dependency, so results may differ from the hosted OpenResume playground. Three text extractors are not three ATS parsers. OpenResume documents support for single-column English resumes. Passing local checks cannot guarantee the same result in Workday, Greenhouse, Lever, or another employer's ATS, and says nothing about ranking or hiring decisions.
 
@@ -95,7 +95,7 @@ The dependency pin and adapter follow the official [PyPI release](https://pypi.o
 
 ## Maintenance
 
-Node dependencies are pinned in the tool's package and lock files. Base Python dependencies are pinned in [the requirements file](/Users/alexbrodsky/GitHub/Portfolio/resume/ats-audit/requirements.txt). The optional direct Docling dependency is pinned separately in [requirements-docling.txt](/Users/alexbrodsky/GitHub/Portfolio/resume/ats-audit/requirements-docling.txt), with transitive versions recorded in each Docling run. Run setup again after dependency changes, adding `--with-docling` to update that environment.
+Node dependencies are pinned in the tool's package and lock files. Base Python dependencies are pinned in [the requirements file](./requirements.txt). The optional direct Docling dependency is pinned separately in [requirements-docling.txt](./requirements-docling.txt), with transitive versions recorded in each Docling run. Run setup again after dependency changes, adding `--with-docling` to update that environment.
 
 Compile the adapter with:
 

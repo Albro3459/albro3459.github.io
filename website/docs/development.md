@@ -4,11 +4,10 @@ A personal portfolio built with Astro and TypeScript. Project case studies, actu
 
 ## Run locally
 
-Requires Node.js 22.23.4 or newer and npm 9.6.5 or newer.
+Requires Node.js 22.23.4 or newer and npm 9.6.5 or newer. Run commands from the repository root.
 
 ```sh
-cd /Users/alexbrodsky/GitHub/Portfolio/website
-npm install
+npm run website:setup
 npm run dev
 ```
 
@@ -27,9 +26,9 @@ The build runs Astro’s TypeScript checks and generates eleven static pages: th
 
 ## Resume
 
-The editable Word document and exported PDF are maintained in the [resume folder](/Users/alexbrodsky/GitHub/Portfolio/resume/README.md). Update both files together. The [static file endpoint](/Users/alexbrodsky/GitHub/Portfolio/website/src/pages/Alexander-Brodsky-Resume.pdf.ts) serves the PDF during development and writes it into the production build as `Alexander-Brodsky-Resume.pdf`, preserving the download filename. Only the source PDF is committed. The deployment workflow uses the same build command.
+The editable Word document and exported PDF are maintained in the [resume folder](../../resume/README.md). Update both files together. The [static file endpoint](../src/pages/Alexander-Brodsky-Resume.pdf.ts) serves the PDF during development and writes it into the production build as `Alexander-Brodsky-Resume.pdf`, preserving the download filename. Only the source PDF is committed. The deployment workflow uses the same build command.
 
-The endpoint reads the sibling resume directory, so the PDF has one source location. The [ATS checker](/Users/alexbrodsky/GitHub/Portfolio/resume/ats-audit/README.md) lives with the resume documents and runs separately from the website.
+The endpoint reads the sibling resume directory, so the PDF has one source location. The [ATS checker](../../resume/ats-audit/README.md) lives with the resume documents and runs separately from the website.
 
 ## Content and design
 
@@ -39,7 +38,7 @@ The homepage features CloudGateway, StreamTrack, Shelf, AI & Developer Tools, Cl
 
 The project cards link to full case studies. Gallery buttons open accessible native dialogs with Escape support and focus restoration. Project filters use pressed button states, experience rows use native details elements, and reveal effects respect reduced motion. Core content and navigation work without JavaScript.
 
-Public README screenshots are compressed to WebP. The original downloads remain in the [ignored website artifacts directory](/Users/alexbrodsky/GitHub/Portfolio/website/artifacts). Asset provenance and content sources are documented with the website.
+Public README screenshots are compressed to WebP. The original downloads remain in the ignored website artifacts directory (`website/artifacts`). Asset provenance and content sources are documented with the website.
 
 ## Browser review
 
