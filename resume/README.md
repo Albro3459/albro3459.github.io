@@ -17,7 +17,7 @@ The build publishes the exported PDF without converting Word documents. Word and
 
 ## Parsing review
 
-From the repository root, install the local checker with `npm run resume:setup`, then run `npm run resume:check` after exporting a new PDF. It compares PDF text with the Word source and checks OpenResume's structured fields against the intended resume data.
+From the repository root, install the local checker with `npm run resume:setup`, then run `npm run resume:check` after exporting a new PDF. It compares PDF text with the Word source and checks OpenResume's structured fields against the intended resume data. For an optional Docling layout and text comparison, install with `npm run resume:setup -- --with-docling`, then run `npm run resume:check -- --vendors openresume docling`. The default check runs OpenResume alone.
 
 See [the checker documentation](/Users/alexbrodsky/GitHub/Portfolio/resume/ats-audit/README.md) for setup, supported checks, and limitations. Reports go to [the ignored artifacts directory](/Users/alexbrodsky/GitHub/Portfolio/resume/artifacts/ats-audit/current). The tool is maintained with this project and runs separately from the website build.
 

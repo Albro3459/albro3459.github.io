@@ -8,4 +8,5 @@ artifacts/
 !package-lock.json
 TODO
 .venv/
+.venv-docling/
 __pycache__/

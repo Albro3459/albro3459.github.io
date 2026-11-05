@@ -6,7 +6,7 @@ import { groupLinesIntoSections } from "lib/parse-resume-from-pdf/group-lines-in
 import { extractResumeFromSections } from "lib/parse-resume-from-pdf/extract-resume-from-sections";
 import type { TextItems } from "lib/parse-resume-from-pdf/types";
 
-const [input, output] = process.argv.slice(2);
+const [input, output, mode] = process.argv.slice(2);
 if (!input || !output) {
   throw new Error("Usage: npm run parse -- /absolute/resume.pdf /absolute/output");
 }
@@ -48,15 +48,16 @@ try {
 
   const lines = groupTextItemsIntoLines(textItems);
   const sections = groupLinesIntoSections(lines);
-  const resume = extractResumeFromSections(sections);
   await mkdir(output, { recursive: true });
-  const files = {
-    "openresume.json": JSON.stringify(resume, null, 2),
+  const files: Record<string, string> = {
     "pdfjs-items.json": JSON.stringify(pages, null, 2),
     "pdfjs-text.txt": lines.map((line) => line.map((item) => item.text).join(" ")).join("\n"),
     "sections.json": JSON.stringify(sections, null, 2),
     "links.json": JSON.stringify(links, null, 2),
   };
+  if (mode !== "--text-only") {
+    files["openresume.json"] = JSON.stringify(extractResumeFromSections(sections), null, 2);
+  }
   for (const [name, content] of Object.entries(files)) {
     await writeFile(join(output, name), content + "\n");
   }
