@@ -9,12 +9,8 @@ Edit the Word document and export a matching PDF with the same filename. Review 
 
 ## Site integration
 
-```sh
-npm run resume:copy
-```
+The [static file endpoint](/Users/alexbrodsky/GitHub/Portfolio/src/pages/Alexander-Brodsky-Resume.pdf.ts) publishes the PDF at [Alexander-Brodsky-Resume.pdf](https://albro3459.github.io/Alexander-Brodsky-Resume.pdf). Visitors can view it in their browser's PDF viewer and download it with the original filename.
 
-This copies the source PDF to the portfolio's [public download](/Users/alexbrodsky/GitHub/Portfolio/public/Alex-Brodsky-Resume.pdf). The existing website links keep their current URL.
+During development, the endpoint reads this PDF on each request. The production build writes it into the ignored build output, so only this source PDF is committed. A missing source PDF fails the build. The GitHub Pages workflow uses the same production build.
 
-The copy runs automatically before `npm run dev` and `npm run build`. The GitHub Pages workflow uses the production build, so deployment receives the same PDF. A missing source PDF stops the copy and build instead of publishing an older version.
-
-The build publishes the exported PDF without converting Word documents. Word and PDF files must be updated together. If a development server is already running, run the copy command again after replacing the PDF.
+The build publishes the exported PDF without converting Word documents. Word and PDF files must be updated together.

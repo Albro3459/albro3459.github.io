@@ -46,7 +46,7 @@ const siteVersion = buildNumber ? `${version}+${buildNumber}` : version;
       <div class="header-actions"><button class="theme-toggle icon-button" type="button" aria-label="Switch to dark theme"><Icon name="moon" /><Icon name="sun" /></button><a class="header-contact" href="/#contact">Contact <Icon size={16} /></a></div>
     </header>
     <main id="main"><slot /></main>
-    <footer class="site-footer shell"><a class="footer-name" href="/">Alexander Brodsky</a><div><a href="https://github.com/Albro3459" target="_blank" rel="noreferrer">GitHub <Icon size={14} /></a><a href="https://www.linkedin.com/in/brodsky-alex22/" target="_blank" rel="noreferrer">LinkedIn <Icon size={14} /></a><a href="/Alex-Brodsky-Resume.pdf" target="_blank">Resume <Icon size={14} /></a></div><span class="footer-colophon">© {new Date().getFullYear()} Alexander Brodsky</span></footer>
+    <footer class="site-footer shell"><a class="footer-name" href="/">Alexander Brodsky</a><div><a href="https://github.com/Albro3459" target="_blank" rel="noreferrer">GitHub <Icon size={14} /></a><a href="https://www.linkedin.com/in/brodsky-alex22/" target="_blank" rel="noreferrer">LinkedIn <Icon size={14} /></a><a href="/Alexander-Brodsky-Resume.pdf" target="_blank">Resume <Icon size={14} /></a></div><span class="footer-colophon">© {new Date().getFullYear()} Alexander Brodsky</span></footer>
     <script>
       const themeButton = document.querySelector<HTMLButtonElement>('.theme-toggle');
       const systemTheme = matchMedia('(prefers-color-scheme: dark)');
