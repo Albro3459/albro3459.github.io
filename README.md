@@ -6,10 +6,10 @@ Projects, work experience, education, and contact information.
 
 The project has two areas:
 
-- [Website](/Users/alexbrodsky/GitHub/Portfolio/website): Astro site, website scripts, assets, and development docs
-- [Resume](/Users/alexbrodsky/GitHub/Portfolio/resume): Word and PDF documents, resume notes, and the ATS audit tool
+- [Website](./website): Astro site, website scripts, assets, and development docs
+- [Resume](./resume): Word and PDF documents, resume notes, and the ATS audit tool
 
-The root package provides commands for both areas. Their dependencies and generated files stay in their own directories.
+Commands run from the project root. No need to change directories.
 
 To work on the website:
 
@@ -26,4 +26,4 @@ npm run resume:setup
 npm run resume:check
 ```
 
-[Website development](/Users/alexbrodsky/GitHub/Portfolio/website/docs/development.md) · [Resume checker](/Users/alexbrodsky/GitHub/Portfolio/resume/ats-audit/README.md)
+[Website development](./website/docs/development.md) · [Resume checker](./resume/ats-audit/README.md)
