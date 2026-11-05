@@ -71,16 +71,16 @@ export type Project = {
 export const projects: Project[] = [
   {
     slug: 'cloudgateway', name: 'CloudGateway', category: 'Applications', kind: 'CLOUD INFRASTRUCTURE · NATIVE APPS',
-    headline: 'Multi-region WireGuard VPN platform',
-    description: 'WireGuard VPN service with web, iOS, macOS, and command-line clients.',
+    headline: 'Multi-region WireGuard VPN service',
+    description: 'Multi-region WireGuard VPN service with web, iOS, macOS, and command-line clients.',
     tags: ['Swift', 'React', 'Python', 'Oracle Cloud'], repository: 'https://github.com/Albro3459/CloudGateway',
     destination: { label: 'Visit website', url: 'https://www.gocloudlaunch.com/' },
-    intro: 'Built a multi-region VPN platform with a React dashboard, native Apple apps, and command-line clients. The backend uses FastAPI, Firebase, and Terraform-managed Oracle Cloud infrastructure.',
+    intro: 'Built a multi-region WireGuard mesh VPN with IPv4/IPv6 tunnels, a React dashboard, native Swift iOS and macOS clients, and a CLI for macOS and Linux. The backend uses FastAPI, Firebase authentication, and Terraform-managed Oracle Cloud infrastructure.',
     role: 'Full-stack development, native clients & infrastructure',
     highlights: [
       { title: 'Web and native clients', description: 'Developed the web dashboard, native iOS and macOS clients, and CLI. The macOS app and CLI share authentication, client inventory, and connection state.' },
       { title: 'Regional infrastructure', description: 'Terraform-managed OCI hosts run regional WireGuard servers. FastAPI handles the control plane, with Firebase Auth and Firestore managing accounts, clients, and desired peer state.' },
-      { title: 'Access control and regional networking', description: 'Account-scoped access controls isolate users, while a regional mesh connects authorized devices across regions. Cloudflare and Caddy front the regional APIs.' },
+      { title: 'Access control and regional networking', description: 'Account-scoped ACLs isolate clients across regions, while a WireGuard mesh connects authorized devices. Ad blocking and DNS-over-TLS forwarding handle DNS traffic. Cloudflare and Caddy front the regional APIs.' },
       { title: 'CloudLaunch origins', description: 'CloudGateway grew from CloudLaunch, my AWS deployment platform. CloudLaunch automated regional network setup, AMI distribution, server deployment, and resource cleanup, using a WireGuard VPN as its example product.', link: { label: 'View CloudLaunch', url: 'https://github.com/Albro3459/CloudLaunch' } },
     ],
     images: [
@@ -92,22 +92,22 @@ export const projects: Project[] = [
   {
     slug: 'streamtrack', name: 'StreamTrack', category: 'Applications', kind: 'MOBILE APP · ENTERTAINMENT',
     headline: 'Movie and TV discovery app',
-    description: 'React Native app with streaming availability, watchlists, and a custom .NET API.',
+    description: 'React Native movie and TV discovery app with streaming availability, watchlists, and a .NET API on AWS.',
     tags: ['React Native', 'TypeScript', 'C# / .NET', 'Firebase'], repository: 'https://github.com/Albro3459/StreamTrack',
     destination: { label: 'View on the App Store', url: 'https://apps.apple.com/us/app/streamtracker/id6770622039' },
-    intro: 'Rewrote a React Native movie and TV discovery app in TypeScript and built its C#/.NET API and AWS Lambda content pipeline. Features include streaming availability, title details, and personal watchlists.',
-    role: 'App rewrite, API development & content pipeline',
+    intro: 'Shipped a React Native/TypeScript movie and TV discovery app with streaming availability, title details, personal watchlists, and Firebase authentication. Deployed its C#/.NET API and PostgreSQL on AWS EC2 with Docker and a Caddy reverse proxy, plus an AWS Lambda function for streaming availability.',
+    role: 'Mobile app, API development & cloud deployment',
     highlights: [
       { title: 'Discovery and watchlists', description: 'Implemented movie and TV discovery, title details, streaming availability, and personal watchlists in the mobile app.' },
       { title: 'API and content pipeline', description: 'The TypeScript and Expo frontend uses Firebase authentication. A C#/.NET API handles content, while an AWS Lambda function fetches popular streaming titles.' },
-      { title: 'App rewrite and project history', description: 'After the original collaborative classroom project, I rewrote the app in summer 2025 and built the API and Lambda function from scratch.' },
+      { title: 'Cloud deployment', description: 'The API and PostgreSQL run on an AWS EC2 VM with Docker and a Caddy reverse proxy.' },
     ],
     images: [
       { file: 'streamtrack-discover', alt: 'StreamTrack discovery screen with movie and television recommendations', caption: 'Movie and TV discovery screen.' },
       { file: 'streamtrack-details', alt: 'StreamTrack title details and streaming availability screen', caption: 'Title details and streaming availability.' },
       { file: 'streamtrack-library', alt: 'StreamTrack personal watchlist library', caption: 'Personal watchlist library.' },
     ],
-    credit: 'The original classroom frontend was created with Joseph Slade and Truc Lam Ho. This case study focuses on my subsequent rewrite and backend work.',
+    credit: 'The original classroom frontend was created with Joseph Slade and Truc Lam Ho. I developed the current app, API, and Lambda function.',
   },
   {
     slug: 'shelf', name: 'Shelf', category: 'Applications', kind: 'WEB APP · LIBRARY CATALOGS',

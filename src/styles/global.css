@@ -333,24 +333,6 @@ h2 span {
   border-radius:7px;
 }
 
-.project-image-arrow {
-  position:absolute;
-  bottom:19px;
-  right:19px;
-  display:grid;
-  place-items:center;
-  background:var(--paper);
-  color:var(--ink);
-  width:41px;
-  height:41px;
-  border-radius:50%;
-  transition:transform .3s;
-}
-
-.project-image-link:hover .project-image-arrow {
-  transform:rotate(45deg);
-}
-
 .project-visual {
   height:350px;
   position:relative;
@@ -366,24 +348,6 @@ h2 span {
   font:8px var(--mono);
   letter-spacing:1.3px;
   z-index:3;
-}
-
-.visual-note {
-  position:absolute;
-  bottom:22px;
-  left:26px;
-  font:8px var(--mono);
-  letter-spacing:1.1px;
-  z-index:3;
-}
-
-.visual-note i {
-  display:inline-block;
-  width:5px;
-  height:5px;
-  border-radius:50%;
-  background:#3b82f6;
-  margin-right:5px;
 }
 
 .visual-cloudgateway {
@@ -1183,12 +1147,6 @@ h2 span {
   font-size:11px;
 }
 
-.case-cover .visual-note {
-  left:40px;
-  bottom:30px;
-  font-size:10px;
-}
-
 .case-cover .cloud-desktop {
   top:83px;
   left:15%;
@@ -1643,11 +1601,6 @@ h2 span {
     top:20px;
     letter-spacing:.8px;
   }
-  .visual-note {
-    font-size:6px;
-    left:18px;
-    bottom:18px;
-  }
   .cloud-desktop {
     top:70px;
     left:7%;
@@ -1704,15 +1657,6 @@ h2 span {
   .tags li {
     font-size:7px;
     padding:4px 6px;
-  }
-  .project-image-arrow {
-    width:34px;
-    height:34px;
-    right:13px;
-    bottom:13px;
-  }
-  .project-image-arrow svg {
-    width:18px;
   }
   .clipboard-art {
     padding-top:111px;
@@ -1917,11 +1861,6 @@ h2 span {
     font-size:7px;
     left:21px;
     top:22px;
-  }
-  .visual-note {
-    font-size:7px;
-    left:21px;
-    bottom:21px;
   }
   .cloud-desktop {
     top:75px;
@@ -2139,7 +2078,7 @@ h2 span {
     font-size:8px;
   }
   .case-hero h1 {
-    font-size:48px;
+    font-size:clamp(40px,12vw,48px);
     letter-spacing:-2.7px;
     overflow-wrap:anywhere;
   }
@@ -2167,11 +2106,6 @@ h2 span {
     font-size:7px;
     left:20px;
     top:22px;
-  }
-  .case-cover .visual-note {
-    font-size:7px;
-    left:20px;
-    bottom:20px;
   }
   .case-cover .cloud-desktop {
     width:77%;
