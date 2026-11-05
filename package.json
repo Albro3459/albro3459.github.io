@@ -4,7 +4,10 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "resume:copy": "node scripts/copy-resume.mjs",
+    "predev": "npm run resume:copy",
     "dev": "astro dev --host 0.0.0.0",
+    "prebuild": "npm run resume:copy",
     "build": "astro check && astro build",
     "preview": "astro preview --host 0.0.0.0",
     "assets:optimize": "node scripts/optimize-assets.mjs",

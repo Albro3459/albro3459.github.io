@@ -21,7 +21,15 @@ npm run build
 npm run preview
 ```
 
-The build runs Astro’s TypeScript checks and generates eleven static pages: the homepage, nine project pages, and a custom 404 page. No server is required for deployment.
+The build first copies the source resume PDF into the public download location, then runs Astro’s TypeScript checks and generates eleven static pages: the homepage, nine project pages, and a custom 404 page. No server is required for deployment.
+
+## Resume
+
+The editable Word document and exported PDF are maintained in the [resume folder](/Users/alexbrodsky/GitHub/Portfolio/resume/README.md). Update both files together. The `resume:copy` script copies that PDF to the existing public download location and runs automatically before development and production builds. The deployment workflow uses the same build command.
+
+```sh
+npm run resume:copy
+```
 
 ## Content and design
 
