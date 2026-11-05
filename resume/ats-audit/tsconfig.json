@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "strict": true,
+    "types": ["node"],
+    "skipLibCheck": true,
+    "noEmit": true,
+    "paths": {
+      "lib/redux/resumeSlice": ["./resume-defaults.ts"],
+      "lib/*": ["./vendor/open-resume/src/app/lib/*"]
+    }
+  },
+  "include": ["parse.ts", "resume-defaults.ts"]
+}

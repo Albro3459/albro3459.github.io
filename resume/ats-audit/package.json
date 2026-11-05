@@ -1,0 +1,17 @@
+{
+  "name": "local-resume-audit",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "parse": "tsx parse.ts",
+    "audit": ".venv/bin/python audit.py",
+    "build": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@types/node": "26.6.6",
+    "pdfjs-dist": "6.5.438",
+    "tsx": "4.23.15",
+    "typescript": "7.0.2"
+  }
+}

@@ -7,12 +7,14 @@ A personal portfolio built with Astro and TypeScript. Project case studies, actu
 Requires Node.js 22.23.4 or newer and npm 9.6.5 or newer.
 
 ```sh
-cd /Users/alexbrodsky/GitHub/Portfolio
+cd /Users/alexbrodsky/GitHub/Portfolio/website
 npm install
 npm run dev
 ```
 
 Open http://localhost:4321. The site needs no credentials or external API services.
+
+The repository root also provides `npm run website:setup`, `npm run dev`, `npm run build`, and `npm run preview` as shortcuts. Website scripts run with the website directory as their working directory. Their dependencies, build output, and generated artifacts stay there.
 
 ## Production build
 
@@ -25,7 +27,9 @@ The build runs Astro’s TypeScript checks and generates eleven static pages: th
 
 ## Resume
 
-The editable Word document and exported PDF are maintained in the [resume folder](/Users/alexbrodsky/GitHub/Portfolio/resume/README.md). Update both files together. The [static file endpoint](/Users/alexbrodsky/GitHub/Portfolio/src/pages/Alexander-Brodsky-Resume.pdf.ts) serves the PDF during development and writes it into the production build as `Alexander-Brodsky-Resume.pdf`, preserving the download filename. Only the source PDF is committed. The deployment workflow uses the same build command.
+The editable Word document and exported PDF are maintained in the [resume folder](/Users/alexbrodsky/GitHub/Portfolio/resume/README.md). Update both files together. The [static file endpoint](/Users/alexbrodsky/GitHub/Portfolio/website/src/pages/Alexander-Brodsky-Resume.pdf.ts) serves the PDF during development and writes it into the production build as `Alexander-Brodsky-Resume.pdf`, preserving the download filename. Only the source PDF is committed. The deployment workflow uses the same build command.
+
+The endpoint reads the sibling resume directory, so the PDF has one source location. The [ATS checker](/Users/alexbrodsky/GitHub/Portfolio/resume/ats-audit/README.md) lives with the resume documents and runs separately from the website.
 
 ## Content and design
 
@@ -35,7 +39,7 @@ The homepage features CloudGateway, StreamTrack, Shelf, AI & Developer Tools, Cl
 
 The project cards link to full case studies. Gallery buttons open accessible native dialogs with Escape support and focus restoration. Project filters use pressed button states, experience rows use native details elements, and reveal effects respect reduced motion. Core content and navigation work without JavaScript.
 
-Public README screenshots are compressed to WebP. The original downloads remain in the ignored artifacts directory. Asset provenance and content sources are documented with the project.
+Public README screenshots are compressed to WebP. The original downloads remain in the [ignored website artifacts directory](/Users/alexbrodsky/GitHub/Portfolio/website/artifacts). Asset provenance and content sources are documented with the website.
 
 ## Browser review
 
@@ -60,7 +64,7 @@ The recording is saved as a WebM in the ignored artifacts directory.
 
 The public address is https://albro3459.github.io/. Astro’s `site` option sets this origin for canonical URLs and social previews. This is a user Pages repository, so there is no repository prefix in its URLs.
 
-The deployment workflow runs on pushes to `main` and can also be started manually from GitHub Actions. It uses Node.js 24 and Astro’s official action to install dependencies, run the production build, and upload the static output. A separate deployment job publishes that artifact to GitHub Pages.
+The deployment workflow runs on pushes to `main` and can also be started manually from GitHub Actions. It uses Node.js 24 and Astro’s official action with the website directory as its project path to install dependencies, run the production build, and upload the static output. A separate deployment job publishes that artifact to GitHub Pages. Deployment does not initialize the ATS parser submodule or install the resume checker's dependencies.
 
 In the repository’s Pages settings, select **GitHub Actions** as the source. Branch publishing invokes Jekyll on the Astro source and fails because Astro frontmatter contains TypeScript.
 

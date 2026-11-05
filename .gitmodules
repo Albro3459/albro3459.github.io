@@ -1,0 +1,3 @@
+[submodule "scripts/resume-audit/vendor/open-resume"]
+	path = resume/ats-audit/vendor/open-resume
+	url = https://github.com/xitanggg/open-resume.git

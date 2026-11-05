@@ -1,0 +1,55 @@
+{
+  "profile": {
+    "name": "Alexander Brodsky",
+    "email": "brodsky.alex22@gmail.com",
+    "phone": "408-508-9690"
+  },
+  "workExperiences": [
+    {
+      "company": "Marucci Sports",
+      "jobTitle": "Full-Stack Web Developer",
+      "date": "Aug 2025 - Present",
+      "descriptionCount": 5
+    },
+    {
+      "company": "Louisiana Office of Technology Services",
+      "jobTitle": "Software Developer Intern",
+      "date": "Jan 2024 - May 2025",
+      "descriptionCount": 2
+    },
+    {
+      "company": "Deloitte Consulting",
+      "jobTitle": "Solutions Engineer Intern",
+      "date": "Jun 2024 - Jul 2024",
+      "descriptionCount": 2
+    },
+    {
+      "company": "We Greaux People",
+      "jobTitle": "Software Developer Intern",
+      "date": "Sep 2023 - Nov 2023",
+      "descriptionCount": 1
+    },
+    {
+      "company": "McIlhenny Company / Tabasco",
+      "jobTitle": "Software Analyst Intern",
+      "date": "May 2023 - Jul 2023",
+      "descriptionCount": 1
+    }
+  ],
+  "educations": [
+    {
+      "school": "Georgia Tech",
+      "degree": "M.S. Computer Science, AI specialization",
+      "date": "Expected May 2028",
+      "gpa": "4.0"
+    },
+    {
+      "school": "Louisiana State University",
+      "degree": "B.S. Computer Science, Mathematics minor",
+      "date": "May 2025",
+      "gpa": "3.6"
+    }
+  ],
+  "projectCount": 3,
+  "skillLineCount": 5
+}
